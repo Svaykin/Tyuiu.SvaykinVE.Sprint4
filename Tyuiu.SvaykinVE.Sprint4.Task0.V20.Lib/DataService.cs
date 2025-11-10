@@ -5,10 +5,15 @@ namespace Tyuiu.SvaykinVE.Sprint4.Task0.V20.Lib
     {
         public int GetMultEvenArrEl(int[] array)
         {
-            int res = 1;
-            for (int i = 1; i < 10; i+=2)
-                res *= array[i];
-            return res;
+            int count = 1;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 == 0)
+                {
+                    count *= array[i];
+                }
+            }
+            return count;
         }
     }
 }
