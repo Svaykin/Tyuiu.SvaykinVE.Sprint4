@@ -1,4 +1,4 @@
-﻿using Tyuiu.SvaykinVE.Sprint4.Task6.V14.Lib;
+﻿using Tyuiu.SvaykinVE.Sprint4.Task7.V17.Lib;
 internal class Program
 {
     private static void Main(string[] args)
@@ -9,33 +9,38 @@ internal class Program
 
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* Спринт #4                                                               *");
-        Console.WriteLine("* Тема: Класс Array                                                       *");
-        Console.WriteLine("* Задание #6                                                              *");
-        Console.WriteLine("* Вариант #14                                                             *");
+        Console.WriteLine("* Тема: Добавление к решению итоговых проектов по спринту                 *");
+        Console.WriteLine("* Задание #7                                                              *");
+        Console.WriteLine("* Вариант #17                                                             *");
         Console.WriteLine("* Выполнил: Свайкин Владислав Евгеньевич | АСОиУб-25-1                    *");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* УСЛОВИЕ:                                                                *");
-        Console.WriteLine("* Дан строковый массив данных [\"Январь\", \"Февраль\", \"Март\",         *");
-        Console.WriteLine("* \"Апрель\", \"Май\", \"Июнь\", \"Июль\"], используя класс Array,        *");
-        Console.WriteLine("* выведите элементы массива, длина которых больше 3 символов.             *");
+        Console.WriteLine("* Дана строка из одноразрядных цифр \"753159864\". Преобразуйте ее        *");
+        Console.WriteLine("* в матрицу 3 на 3 и подсчитайте количество четных чисел                  *");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
         Console.WriteLine("***************************************************************************");
 
-        var months = new string[] { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль" };
-        Console.WriteLine("Исходный массив: ");
-        Console.WriteLine(String.Join(", ", months));
-
+        int rows = 3;
+        int cols = 3;
+        int[,] mtrx = new int[rows, cols];
+        string str = "753159864";
+        int res = ds.Calculate(rows, cols, str);
+        int index = 0;
+        Console.WriteLine("* матрица                                                                 *");
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write($"{str[index]} \t");
+                index++;
+            }
+            Console.WriteLine();
+        }
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
-
-        string[] res = ds.Calculate(months);
-        Console.WriteLine("Элементы массива, длина которых больше 3 символов: ");
-        foreach (var month in res)
-        {
-            Console.WriteLine(month);
-        }
+        Console.WriteLine(res);
 
         Console.ReadKey();
     }
